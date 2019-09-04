@@ -1,0 +1,52 @@
+Apperance :
+look and feel = Breath
+plasma theme = MacBreeze Shadowless
+cursors = adwaita
+splash screen = simple tux splash
+icon = mojave ct-light
+application style = kvantum
+window decoration = mojave-ct
+
+Panel :
+windows button
+search
+event calendar ddd, HH:mm:ss
+inline battery
+system tray
+weather widget
+netspeed widget
+global menu
+application title
+application launcher
+
+Software :
+Simple Screen Recorder
+Pinta
+Gparted
+Brasero
+Chrome
+Firefox
+VScode
+Sublime
+bleachbit
+geany
+spotify
+steam
+tele
+virtual box
+dolphin
+wireshark
+teamviewer
+word
+kile
+pamac
+konsole
+setting
+guvcview
+vlc
+audacity
+kvantum
+latte-dock
+
+
+
