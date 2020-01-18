@@ -47,6 +47,6 @@ vlc
 audacity
 kvantum
 latte-dock
-
+android studio
 
 

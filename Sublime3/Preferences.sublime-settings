@@ -42,8 +42,8 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
 	"match_brackets_angle": true,
 	"material_theme_accent_orange": true,
 	"material_theme_accent_scrollbars": true,
