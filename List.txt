@@ -48,5 +48,18 @@ audacity
 kvantum
 latte-dock
 android studio
+discord
+obs
+postman
+mongodb compass
+scrcpy
+zoom
+wps
+pdf arranger
+netbeans
+wine
+
+
+
 
 
