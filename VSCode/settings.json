@@ -1,0 +1,80 @@
+{
+  "code-runner.runInTerminal": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Night Owl",
+  "editor.find.autoFindInSelection": "always",
+  "window.closeWhenEmpty": false,
+  "editor.emptySelectionClipboard": false,
+  "editor.detectIndentation": true,
+  "editor.dragAndDrop": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnPaste": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "C_Cpp.updateChannel": "Insiders",
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#1857a4",
+    "statusBar.border": "#1857a4",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#1f6fd0",
+    "titleBar.activeBackground": "#1857a4",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.border": "#1857a4",
+    "titleBar.inactiveBackground": "#1857a499",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "php.suggest.basic": false,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.previewFlutterUiGuides": true,
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "dart.debugExternalLibraries": true,
+  "dart.debugSdkLibraries": false,
+  "editor.linkedEditing": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "open-in-browser.default": "google-chrome",
+  "explorer.openEditors.visible": 0,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "editor.fontSize": 15,
+  "prettier.tabWidth": 4,
+  "[blade]": {
+    "editor.snippetSuggestions": "none"
+  },
+  "editor.minimap.enabled": false
+}
