@@ -1,18 +1,26 @@
 auto rename tag
 beautify
 bracket pair colorizer
+better phpunit
 c/c++
 Code Runner
 CSS Peek
+dart
 DotENV
 Ejs language support
 ES7 react
+eslint
 bloc
 flutter
 dart
 gitlens
+go
+html css support
 indent-rainbow
+intellisense for css class name in html
 jupyter
+jupyter keymap 
+jupyter notebook renderers
 Intellisense for CSS class names in html
 laravel artisan
 laravel blade formatter
@@ -24,6 +32,7 @@ laravel snippet
 laravel goto controller
 latex workshop
 live server
+live preview
 live share
 material icon theme
 night owl
@@ -34,11 +43,20 @@ php namespace resolver
 path Intellisense
 php debug
 php Intellisense
+postcss language support
 prettier
 pubspec assist
 project manager
 python
 pylance
+remote ssh
+remote ssh: editing configuration file
+sass
 sublime text keymap
+tailwind css intellisense
 vue
+vue language features
+vetur
 php intellisense for codeigniter
+github copilot
+
