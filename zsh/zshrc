@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # zplug init
 export ZPLUG_HOME=$HOME/.zplug
 
@@ -22,195 +29,37 @@ zplug load
 blanktab() { [[ $#BUFFER == 0 ]] && CURSOR=3 zle list-choices || zle expand-or-complete }
 zle -N blanktab && bindkey '^I' blanktab
 
-
 # Path to your oh-my-zsh installation.
-export ZSH=/home/BrondoL/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
-#############################
-# Customized Spaceship Theme#
-#############################
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-ZSH_THEME="spaceship"
-SPACESHIP_PROMPT_ORDER=(
-  time
-  user
-  host
-  dir
-  git
-  hg
-  package
-  ruby
-  php
-  docker
-  venv
-  conda
-  pyenv
-  line_sep
-  vi_mode
-  jobs
-  exit_code
-  char
-)
+ENABLE_CORRECTION="true"
 
-#PROMPT
-SPACESHIP_CHAR_SYMBOL='%F{$COLOR 3}\u25cf%F{$COLOR 3}\u25cf%F{$COLOR 3}\u25cf '
-SPACESHIP_PROMPT_ADD_NEWLINE=true
-SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_PROMPT_PREFIXES_SHOW=true
-SPACESHIP_PROMPT_SUFFIXES_SHOW=true
-SPACESHIP_PROMPT_DEFAULT_PREFIX="via "
-SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
-
-# TIME
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_TIME_COLOR="$COLOR 3"
-SPACESHIP_TIME_FORMAT="\u29d0 %D{ %a,%d %B %Y} "
-
-# USER
-SPACESHIP_USER_PREFIX="with "
-SPACESHIP_USER_SUFFIX=""
-SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR="$COLOR 0"
-SPACESHIP_USER_COLOR_ROOT="red"
-
-# HOST
-SPACESHIP_HOST_PREFIX="@:( "
-SPACESHIP_HOST_SUFFIX=")"
-SPACESHIP_HOST_COLOR="green"
-
-# DIR
-SPACESHIP_DIR_PREFIX=" in "
-SPACESHIP_DIR_SUFFIX=" "
-SPACESHIP_DIR_TRUNC=2
-SPACESHIP_DIR_COLOR="$COLOR 6"
-
-# GIT
-SPACESHIP_GIT_SHOW=true
-SPACESHIP_GIT_PREFIX="on "
-SPACESHIP_GIT_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_GIT_SYMBOL=" "
-# GIT BRANCH
-SPACESHIP_GIT_BRANCH_SHOW=true
-SPACESHIP_GIT_BRANCH_PREFIX="$SPACESHIP_GIT_SYMBOL"
-SPACESHIP_GIT_BRANCH_SUFFIX=""
-SPACESHIP_GIT_BRANCH_COLOR="magenta"
-# GIT STATUS
-SPACESHIP_GIT_STATUS_SHOW=true
-SPACESHIP_GIT_STATUS_PREFIX=" ["
-SPACESHIP_GIT_STATUS_SUFFIX="]"
-SPACESHIP_GIT_STATUS_COLOR="red"
-SPACESHIP_GIT_STATUS_UNTRACKED="?"
-SPACESHIP_GIT_STATUS_ADDED="+"
-SPACESHIP_GIT_STATUS_MODIFIED="!"
-SPACESHIP_GIT_STATUS_RENAMED="»"
-SPACESHIP_GIT_STATUS_DELETED="✘"
-SPACESHIP_GIT_STATUS_STASHED="$"
-SPACESHIP_GIT_STATUS_UNMERGED="="
-SPACESHIP_GIT_STATUS_AHEAD="⇡"
-SPACESHIP_GIT_STATUS_BEHIND="⇣"
-SPACESHIP_GIT_STATUS_DIVERGED="⇕"
-
-# PACKAGE
-SPACESHIP_PACKAGE_SHOW=true
-SPACESHIP_PACKAGE_PREFIX="is "
-SPACESHIP_PACKAGE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_PACKAGE_SYMBOL="📦 "
-SPACESHIP_PACKAGE_COLOR="red"
-
-# NODE
-SPACESHIP_NODE_SHOW=true
-SPACESHIP_NODE_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-SPACESHIP_NODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_NODE_SYMBOL=""
-SPACESHIP_NODE_DEFAULT_VERSION=""
-SPACESHIP_NODE_COLOR=""
-
-#PHP
-SPACESHIP_PHP_SHOW=true
-#SPACESHIP_PHP_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-#SPACESHIP_PHP_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_PHP_SYMBOL="\uf457"
-SPACESHIP_PHP_COLOR="blue"
-
-# VENV
-SPACESHIP_VENV_SHOW=true
-#SPACESHIP_VENV_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-#SPACESHIP_VENV_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_VENV_SYMBOL="  "
-SPACESHIP_VENV_COLOR="red"
-
-# CONDA
-SPACESHIP_CONDA_SHOW=true
-#SPACESHIP_CONDA_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-#SPACESHIP_CONDA_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_CONDA_SYMBOL="🅒   "
-SPACESHIP_CONDA_COLOR="red"
-
-# PYENV
-SPACESHIP_PYENV_SHOW=true
-#SPACESHIP_PYENV_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-#SPACESHIP_PYENV_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_PYENV_SYMBOL="  "
-SPACESHIP_PYENV_COLOR="red"
-
-# JOBS
-SPACESHIP_JOBS_SHOW="true"
-SPACESHIP_JOBS_PREFIX=""
-SPACESHIP_JOBS_SUFFIX=" "
-SPACESHIP_JOBS_SYMBOL="✦"
-SPACESHIP_JOBS_COLOR="blue"
-
-# EXIT CODE
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_EXIT_CODE_PREFIX="("
-SPACESHIP_EXIT_CODE_SUFFIX=") "
-SPACESHIP_EXIT_CODE_SYMBOl="✘ "
-SPACESHIP_EXIT_CODE_COLOR="red"
-
-###END THEME CONFIG###
-
-
-
-#######################
-# PLUGINS OH-MY-ZSH   #
-######################
-plugins=(git autojump zsh-autosuggestions sudo history-substring-search colored-man-pages zsh-syntax-highlighting zsh-z)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo history-substring-search colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
-alias lc='colorls -r --sf'
-alias downloadmp3='youtube-dl -x --audio-format mp3'
-alias neo='neofetch'
-
-# alias for php server and lamp
-alias php-server-start="sudo systemctl start httpd mysqld && sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
-alias php-server-stop="sudo systemctl stop httpd mysqld && sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
-alias php-server-status="sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
-alias php-server-restart="sudo systemctl restart httpd mysqld && sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
-
-alias weather-check="curl wttr.in/Semarang\?0"
-
-# ls info
-alias lx="exa -h"
-
-# cat alias
-alias prin="bat"
-#alias editor kate
-alias sukate="SUDO_EDITOR=kate sudoedit "
 alias cuaca="curl wttr.in/bandarlampung\?0"
-
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-
-export PATH=$HOME/.config/composer/vendor/bin:$PATH
-export PATH=~/flutter/bin/:$PATH
-export PATH=~/.local/bin/:$PATH
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-
-export PATH="~/.npm-global/bin:$PATH"
-source "/home/BrondoL/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme"
+alias clearhistory='echo "" > ~/.zsh_history & exec $SHELL -l'
 alias python=python3
 alias pip=pip3
-alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
-export SPARK_HOME=/opt/spark
-export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+alias vpn_id="printf 'aulia.nabil\nMifuz-28\npush\n' | /opt/cisco/anyconnect/bin/vpn -s connect idpcp.garenanow.com/uservpn"
+alias vpn_dc="/opt/cisco/anyconnect/bin/vpn disconnect"
+alias ls=lsd
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$PATH:/Users/brondol/FlutterDev/flutter/bin"
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/php@8.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/php@8.1/include"
+export PATH="/Users/brondol/.composer/vendor/bin:$PATH"
+export PATH="/Users/brondol/Library/Android/sdk/platform-tools:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
